@@ -1,11 +1,12 @@
 fun main() {
 
-    val sec = 75                              //кол-во секунд проведенных в космосе
+    var secInCos = 6480                          //кол-во секунд проведенных в космосе
 
-    val min: Float = 60f                      //кол-во секунд в минуте
-    // println(sec / min)                        //кол-во минут проведенных в космосе 1.25
+    val minutes = secInCos / 60             //кол-во минут проведенных в космосе
 
-     val minute = 1
-     val seconds = 25
-     println("%02d:%02d".format(minute,seconds))
+    //println(minutes)
+
+     secInCos = 0
+
+    println("%03d:%02d".format(minutes,secInCos))
 }
