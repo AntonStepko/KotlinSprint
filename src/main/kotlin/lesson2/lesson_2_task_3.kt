@@ -8,10 +8,10 @@ fun main() {
 
     val timeInWay = 457
 
-    val hrInWay = (timeInWay + startTimeMin) / 60        // 17
-    val minInWay = (timeInWay + startTimeMin) % 60       // 16
+    val endTimeHr = (timeInWay + startTimeMin) / 60        // 17
+    val endTimeMin = (timeInWay + startTimeMin) % 60       // 16
 
-    val finishTime = ("%2d:%2d".format(hrInWay,minInWay))
+    val finishTime = ("%2d:%2d".format(endTimeHr,endTimeMin))
 
     println("Время прибытия поезда")
     println(finishTime)
