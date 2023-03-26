@@ -4,7 +4,7 @@ fun main() {
 
     val startTrainHr = 9
     val startTrainMin = 39
-    val startTimeMin = (9 * 60) + 39                     // 579
+    val startTimeMin = (startTrainHr * 60) + startTrainMin                     // 579
 
     val timeInWay = 457
 
