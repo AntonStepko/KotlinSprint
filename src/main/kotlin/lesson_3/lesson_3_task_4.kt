@@ -6,12 +6,12 @@ fun main() {
     var moveTo = "E4"
     var step = 1
 
-    println("$moveFrom-$moveTo; ход $step")
+    println("$moveFrom-$moveTo;$step")
 
     moveFrom = "D2"
     moveTo = "D3"
     step += step
 
-    println("$moveFrom-$moveTo; ход $step")
+    println("$moveFrom-$moveTo;$step")
 
 }
