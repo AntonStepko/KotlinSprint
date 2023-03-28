@@ -1,18 +1,11 @@
 package lesson_3
 fun main() {
 
-    var moveFrom: String
-    moveFrom = "E"
-    var moveTo: String
-    moveTo = "E"
-
-    var numFrom: Int
-    numFrom = 2
-    var numTo: Int
-    numTo = 4
-
-    var step: Int
-    step = 1
+    var moveFrom = "E"
+    var moveTo = "E"
+    var numFrom = 2
+    var numTo = 4
+    var step = 1
 
     println("$moveFrom$numFrom-$moveTo$numTo; ход $step")
 
