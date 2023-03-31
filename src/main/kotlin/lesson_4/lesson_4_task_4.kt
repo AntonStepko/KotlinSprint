@@ -3,12 +3,12 @@ package lesson_4
 fun main () {
 
     val trainingDay = 5
-    val parityDay = trainingDay % 2
+    val isDayEven = trainingDay % 2 == 0
 
-    val exerciseForHands: Boolean = (parityDay == IS_ODD_DAY)
-    val exerciseForLeg: Boolean = (parityDay == IS_PARITY_DAY)
-    val exerciseForBack: Boolean = (parityDay == IS_ODD_DAY)
-    val exerciseForPress: Boolean = (parityDay == IS_PARITY_DAY)
+    val exerciseForHands: Boolean = !isDayEven
+    val exerciseForLeg: Boolean = isDayEven
+    val exerciseForBack: Boolean = !isDayEven
+    val exerciseForPress: Boolean = isDayEven
 
     val result = """
         Упражнения для рук:    $exerciseForHands
@@ -21,6 +21,3 @@ fun main () {
    println(result)
 
 }
-
-const val IS_PARITY_DAY = 0
-const val IS_ODD_DAY = 1
