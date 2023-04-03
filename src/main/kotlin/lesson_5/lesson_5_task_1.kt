@@ -2,12 +2,14 @@ package lesson_5
 
 fun main() {
 
-    println("Подтвердите что Вы не бот. Решите пример: 2+2=..")
+    val num1 = 2
+    val num2 = 2
+    val numSum = num1 + num2
+    println("Подтвердите что Вы не бот. Решите пример: $num1+$num2=..")
 
-    val userAnswer = readLine()!!.toInt()
+    val userAnswer = readln().toInt()
 
-    if(userAnswer == TRUE_ANSWER) println("Добро пожаловать!")
-    else if(userAnswer != TRUE_ANSWER) println("Доступ запрещен.")
+    if(userAnswer == numSum) println("Добро пожаловать!")
+    else if(userAnswer != numSum) println("Доступ запрещен.")
 
 }
-const val TRUE_ANSWER = 4
