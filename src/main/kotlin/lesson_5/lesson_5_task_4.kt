@@ -3,16 +3,21 @@ package lesson_5
 fun main() {
 
     println("Введите логин")
-    val userLogin = readLine()!!.toString()
+    val userLogin = readln().toString()
 
-    if(userLogin == REGISTERED_LOGIN)
-        else println("Зарегистрируйтесь")
+    if(userLogin == REGISTERED_LOGIN) {
+        println("Введите пароль")
+    } else {
+        println("Зарегистрируйтесь!")
+    }
 
-    println("Введите пароль")
-    val userPassword = readLine()!!.toString()
+    val userPassword = readln().toString()
 
-    if(userPassword == REGISTERED_PASSWORD) println("С возвращением!")
-        else println("Ошибка авторизации")
+    if(userPassword == REGISTERED_PASSWORD) {
+        println("С возвращением!")
+    } else {
+        println("Ошибка авторизации")
+    }
 
 }
 const val REGISTERED_LOGIN = "Batman"
