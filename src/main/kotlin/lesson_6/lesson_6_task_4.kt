@@ -12,7 +12,7 @@ fun main() {
 
         if(inputData == randomNum){
             println("Это была великолепная игра!")
-        }
+         }
     }
     println("Было загадано число $randomNum")
 }
