@@ -4,24 +4,22 @@ fun main() {
 
     println("Зарегистрируйтесь")
     println("Придумайте логин")
-    var newUserLogin = readln().toString()
+    val newUserLogin = readln()
 
     println("Придумайте пароль")
-    var newUserPass = readln().toString()
+    val newUserPass = readln()
 
     println("Введите логин и пароль")
-    var userLogin = readln().toString()
-    var userPass = readln().toString()
+    var userLogin = readln()
+    var userPass = readln()
 
     if(newUserLogin != userLogin || newUserPass != userPass)
         do {
         println("Неправильный логин или пароль, введите заново")
-        userLogin = readln().toString()
-        userPass = readln().toString()
+        userLogin = readln()
+        userPass = readln()
     } while(newUserLogin != userLogin || newUserPass != userPass)
 
-    else (newUserLogin == userLogin && newUserPass == userPass)
-    println("Авторизация прошла успешно")
-
+        println("Авторизация прошла успешно")
 }
 
