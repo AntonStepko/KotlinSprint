@@ -6,7 +6,7 @@ fun main() {
     println("Введите ингридиент:")
     val userInput = readln()
 
-    if(userInput in ingridientsOfSalat) {
+    if (userInput in ingridientsOfSalat) {
         println("Ингридиент $userInput есть в списке")
-    }else println("Такого ингридиента в рецепте нет!")
+    } else println("Такого ингридиента в рецепте нет!")
 }
