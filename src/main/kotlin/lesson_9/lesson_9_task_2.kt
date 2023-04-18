@@ -21,5 +21,5 @@ fun main() {
         list.forEach {
             println(it)
         }
-    } else false
+    }
 }
