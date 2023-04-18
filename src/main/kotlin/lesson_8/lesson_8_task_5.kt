@@ -4,20 +4,17 @@ fun main() {
 
     println("Какое колличество ингридиентов?")
     val sizeArray = readln().toInt()
-    var n = 0
 
-    val list = Array(sizeArray) { "$n" }
+    val list = Array(sizeArray) { "" }
 
     println("Введиете ингридиенты:")
-    for (i in list) {
+    for (i in list.indices) {
         val ingrid = readln()
-        list[n] = ingrid
-        n++
+        list[i] = ingrid
     }
 
     println("Список Ваших ингридиентов:")
-    for (i in list) {
-        println(i)
+    for (i in list.indices) {
+        println(list[i])
     }
-
 }
