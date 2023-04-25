@@ -1,15 +1,14 @@
 package lesson_9
 
 fun main() {
-    val numIngrid = 5
-    val list = MutableList(numIngrid) { "" }
+
+    val list = mutableSetOf<String>()
 
     println("Введите 5 ингридиентов")
-    for (i in list.indices) {
+    for (i in 1..5) {
         val userIngrid = readln()
-        list[i] = userIngrid
+        list.add(userIngrid)
     }
 
-    println("${list.toSet().sorted().joinToString().capitalize()}.")
-
+    println("${list.sorted().joinToString().capitalize()}.")
 }
