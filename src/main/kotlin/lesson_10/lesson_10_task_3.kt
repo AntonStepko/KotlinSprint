@@ -4,12 +4,11 @@ fun main() {
 
     println("Введите длину пароля")
     val lengthPassword = readln().toInt()
-    val password = generatingOfPassword(lengthPassword)
+    val password = generatePassword(lengthPassword)
     println("Ваш пароль: $password")
-
 }
 
-fun generatingOfPassword(lengthPassword: Int): String {
+fun generatePassword(lengthPassword: Int): String {
 
     var result = ""
     while (result.length < lengthPassword) {
@@ -23,14 +22,10 @@ fun generatingOfPassword(lengthPassword: Int): String {
     return result
 }
 
-fun getNumber(): String {
-    val number = (0..9).random()
-    return number.toString()
-
+fun getNumber(): Int {
+    return (0..9).random()
 }
 
-fun getChar(): String {
-    val char = ("\"#$%&'()*+,-. /!").random()
-    return char.toString()
-
+fun getChar(): Char {
+    return (32..47).random().toChar()
 }
