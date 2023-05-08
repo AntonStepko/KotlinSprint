@@ -1,6 +1,18 @@
 package lesson_10
 
 fun main() {
+    val round = holdRound()
+    println("Вы выиграли $round партий.")
+}
+
+fun throwRandomize(): Pair<Int, Int> {
+
+    val cube1 = (1..6).random()
+    val cube2 = (1..6).random()
+    return Pair(cube1, cube2)
+}
+
+fun holdRound(): Int {
     var round = 0
 
     do {
@@ -26,14 +38,6 @@ fun main() {
         println("Хотите бросить кости еще раз Введите Да или Нет?")
         val userAnswer = readln()
 
-    } while (userAnswer == "да")
-
-    println("Вы выиграли $round партий.")
-}
-
-fun throwRandomize(): Pair<Int, Int> {
-
-    val cube1 = (1..6).random()
-    val cube2 = (1..6).random()
-    return Pair(cube1, cube2)
+    } while (userAnswer.equals("Да", ignoreCase = true))
+    return round
 }
