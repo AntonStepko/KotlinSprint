@@ -2,34 +2,32 @@ package lesson_10
 
 fun main() {
     println("Придумайте логин (длина должна быть более 4 символов):")
-    val inputLogin = inputLogin()
-    do {
-        val result = checkLoginLength(inputLogin)
-        if (!result) {
-            println("Логин недостаточно длинный")
-            Thread.sleep(1500)
-        }
-    } while (!result)
+    var registeredLogin = readln()
+    var result = checkLoginLength(registeredLogin)
+    while (!result) {
+        println("Логин недостаточно длинный")
+        registeredLogin = readln()
+        result = checkLoginLength(registeredLogin)
+    }
 
     val generatedPassword = generatePassword()
-    println("Ваш пароль: $generatedPassword")
-    Thread.sleep(1500)
+    printWithDelay("Ваш пароль: $generatedPassword")
 
-    println("Введите логин и пароль:")
-    var userLogin = readln()
-    var userPassword = readln()
+    printWithDelay("Введите логин и пароль:")
+    var inputLogin = readln()
+    var inputPassword = readln()
 
-    while ((inputLogin != userLogin) || (userPassword != generatedPassword)) {
+    while ((registeredLogin != inputLogin) || (inputPassword != generatedPassword)) {
         println("Неверный логин или пароль, введите заново:")
-        userLogin = readln()
-        userPassword = readln()
+        inputLogin = readln()
+        inputPassword = readln()
     }
 
     do {
         val sms = generateSms()
         println("Ваш код: $sms")
-        Thread.sleep(1500)
-        println("Введите код:")
+
+        printWithDelay("Введите код:")
         val userSms = readln().toInt()
     } while (userSms != sms)
 
@@ -51,4 +49,9 @@ fun generateSms(): Int {
     return (1000..9999).random()
 }
 
-fun inputLogin(): String = readln()
+fun printWithDelay(message: String) {
+    Thread.sleep(DELAY_TIME)
+    println(message)
+}
+
+const val DELAY_TIME: Long = 1500
