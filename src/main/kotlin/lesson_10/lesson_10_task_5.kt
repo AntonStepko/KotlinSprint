@@ -2,9 +2,9 @@ package lesson_10
 
 fun main() {
     println("Придумайте логин (длина должна быть более 4 символов):")
+    val inputLogin = inputLogin()
     do {
-        val userLogin = readln()
-        val result = checkLoginLength(userLogin)
+        val result = checkLoginLength(inputLogin)
         if (!result) {
             println("Логин недостаточно длинный")
             Thread.sleep(1500)
@@ -19,7 +19,7 @@ fun main() {
     var userLogin = readln()
     var userPassword = readln()
 
-    while ((userLogin != userLogin) || (userPassword != generatedPassword)) {
+    while ((inputLogin != userLogin) || (userPassword != generatedPassword)) {
         println("Неверный логин или пароль, введите заново:")
         userLogin = readln()
         userPassword = readln()
@@ -50,3 +50,5 @@ fun generatePassword(): String {
 fun generateSms(): Int {
     return (1000..9999).random()
 }
+
+fun inputLogin(): String = readln()
