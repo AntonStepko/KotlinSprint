@@ -18,16 +18,18 @@ fun main() {
         val sumCubesHuman = cubeOfHuman1 + cubeOfHuman2
         val sumCubesComp = cubeOfComp1 + cubeOfComp2
 
-        val compareResult = isHumanWin(sumCubesHuman, sumCubesComp)
+//        val compareResult = isHumanWin(sumCubesHuman, sumCubesComp)
 
-        when (compareResult) {
+        when (compareResult(sumCubesHuman, sumCubesComp)) {
             true -> {
                 println("Победил мешок с костями! \n")
                 round++
             }
+
             null -> {
                 println("Ничья!")
             }
+
             else -> {
                 println("Победила бездушная машина! \n")
             }
@@ -46,13 +48,9 @@ fun throwRandomize(): Pair<Int, Int> {
     return Pair(cube1, cube2)
 }
 
-fun isHumanWin(humanResult: Int, compResult: Int): Boolean? {
+fun compareResult(humanResult: Int, compResult: Int): Boolean? {
 
-    var result: Boolean? = null
-    if (humanResult > compResult) {
-        result = true
-    } else if (humanResult < compResult) {
-        result = false
-    }
-    return result
+    if (humanResult != compResult)
+        return humanResult > compResult
+    return null
 }
