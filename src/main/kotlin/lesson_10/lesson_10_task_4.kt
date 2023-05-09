@@ -18,8 +18,6 @@ fun main() {
         val sumCubesHuman = cubeOfHuman1 + cubeOfHuman2
         val sumCubesComp = cubeOfComp1 + cubeOfComp2
 
-//        val compareResult = isHumanWin(sumCubesHuman, sumCubesComp)
-
         when (compareResult(sumCubesHuman, sumCubesComp)) {
             true -> {
                 println("Победил мешок с костями! \n")
