@@ -46,9 +46,7 @@ fun throwRandomize(): Pair<Int, Int> {
     return Pair(cube1, cube2)
 }
 
-fun compareResult(humanResult: Int, compResult: Int): Boolean? {
+fun compareResult(humanResult: Int, compResult: Int): Boolean? =
+    if (humanResult != compResult) humanResult > compResult
+    else null
 
-    if (humanResult != compResult)
-        return humanResult > compResult
-    return null
-}
