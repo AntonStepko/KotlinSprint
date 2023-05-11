@@ -1,27 +1,25 @@
 package lesson_11
 
 class User(
-
-        val uid: String,
-        val login: String,
-        val password: String,
-        val email: String,
+   val uid: String,
+   val login: String,
+   val password: String,
+   val email: String,
 )
 
 fun main() {
-
     val user1 = User(
-            uid = "@avstepko",
-            login = "stepkoanton",
-            password = "Qwerty123",
-            email = "stepkoanton@gmail.com",
+        uid = "@avstepko",
+        login = "stepkoanton",
+        password = "Qwerty123",
+        email = "stepkoanton@gmail.com",
     )
 
     val user2 = User(
-            uid = "@ievetrov",
-            login = "vetrovivan",
-            password = "1q2w3e4r5t",
-            email = "ivanvetrov@yandex.ru",
+        uid = "@ievetrov",
+        login = "vetrovivan",
+        password = "1q2w3e4r5t",
+        email = "ivanvetrov@yandex.ru",
     )
 
     println(user1.uid)
