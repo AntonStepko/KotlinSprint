@@ -25,11 +25,12 @@ fun main () {
     )
 
     val room2 = Room(
-            cover = 2,
-            title = "Ремонт авто",
-            avatar = listOf("Луна", "Город", "Кошка"),
-            nickname = listOf("Алексей", "Петр", "Елена"),
+        cover = 2,
+        title = "Ремонт авто",
+        avatar = listOf("Луна", "Город", "Кошка"),
+        nickname = listOf("Алексей", "Петр", "Елена"),
     )
+
     val index = 2
     println(room1.getList()[index])
     room1.speakStatus()
