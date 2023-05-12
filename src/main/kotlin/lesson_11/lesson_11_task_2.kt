@@ -1,12 +1,11 @@
 package lesson_11
 
 class User(
-
-        val uid: String,
-        val login: String,
-        var password: String,
-        val email: String,
-        var bio: String,
+    val uid: String,
+    val login: String,
+    var password: String,
+    val email: String,
+    var bio: String? = null,
 ) {
     fun outputInfoUser() = """
         Информация о пользоватле
@@ -17,7 +16,7 @@ class User(
         $bio
     """.trimIndent()
 
-    fun getInfoUser(): String {
+    fun getInfoUser(): String? {
         println("Напишите о себе:")
         bio = readln()
         return bio
@@ -46,11 +45,11 @@ class User(
 fun main() {
 
     val user = User(
-            uid = "@avstepko",
-            login = "stepkoanton",
-            password = "Qwerty123",
-            email = "stepkoanton@gmail.com",
-            bio = " "
+        uid = "@avstepko",
+        login = "stepkoanton",
+        password = "Qwerty123",
+        email = "stepkoanton@gmail.com",
+        bio = " "
     )
 
     user.getInfoUser()
