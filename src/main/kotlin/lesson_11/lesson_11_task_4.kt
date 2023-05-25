@@ -1,6 +1,10 @@
 package lesson_11
 
-class Contact (
+class FavoriteContact(
+    val userName: List<String>,
+)
+
+class Contact(
     val avatar: String,
     val firstName: String,
     val secondName: String,
@@ -11,9 +15,25 @@ class Contact (
     val cellNumber: String,
     val homeNumber: String,
     var faceTime: List<String>,
-    var iCloud: String? = null,
+    var iCloud: String = "",
     val contacts: List<String>,
 ) {
+
+    fun sendMessage() {
+        println("Отправить сообщение")
+    }
+
+    fun makeCall() {
+        println("Совершить звонок")
+    }
+
+    fun makeVideoCall() {
+        println("Совершить видео звонок")
+    }
+
+    fun sendEmail() {
+        println("Отправить почту")
+    }
 
     fun getEmailForICloud() {
         iCloud = email
@@ -26,19 +46,24 @@ class Contact (
 
 fun main() {
 
+    val favoriteContact = FavoriteContact(
+        userName = listOf("жена", "подруга", "подруга"),
+    )
+
     val contact = Contact(
         avatar = "Мышь",
         firstName = "Антон",
         secondName = "Степко",
-        sms = "Отправить сообщение",
-        call = "Звонок",
-        videoCall = "Видео звонок",
+        sms = "",
+        call = "",
+        videoCall = "",
         email = "mail@mail.ru",
         cellNumber = "8 (999) 999-42-42",
         homeNumber = "8 (999) 888-42-42",
         faceTime = listOf(),
-        iCloud = " ",
-        contacts = listOf("жена", "подруга", "подруга"),
+        iCloud = "",
+        contacts = favoriteContact.userName
 
     )
+
 }
