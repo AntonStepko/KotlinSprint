@@ -1,22 +1,19 @@
 package lesson_11
 
 class FavoriteContact(
-    val userName: List<String>,
+    val id: Int,
+    val userName: String,
 )
 
 class Contact(
+    val id: Int,
     val avatar: String,
     val firstName: String,
     val secondName: String,
-    val sms: String,
-    val call: String,
-    val videoCall: String,
-    var email: String,
     val cellNumber: String,
     val homeNumber: String,
-    var faceTime: List<String>,
-    var iCloud: String = "",
-    val contacts: List<String>,
+    var iCloud: String,
+    val favoriteContacts: List<FavoriteContact>,
 ) {
 
     fun sendMessage() {
@@ -35,35 +32,40 @@ class Contact(
         println("Отправить почту")
     }
 
-    fun getEmailForICloud() {
-        iCloud = email
+    fun makeFaseTimeCall() {
+        println("Позвонить по Face Time")
     }
 
-    fun getFunctionsFaseTime() {
-        faceTime = listOf(videoCall, call)
+    fun makeFaceTimeVideoCall() {
+        println("Совершить видео звонок по Face Time")
     }
 }
 
 fun main() {
 
-    val favoriteContact = FavoriteContact(
-        userName = listOf("жена", "подруга", "подруга"),
+    val favoriteContact1 = FavoriteContact(
+        id = 1,
+        userName = "жена",
+    )
+
+    val favoriteContact2 = FavoriteContact(
+        id = 2,
+        userName = "подруга",
+    )
+
+    val favoriteContact3 = FavoriteContact(
+        id = 3,
+        userName = "подруга",
     )
 
     val contact = Contact(
+        id = 1,
         avatar = "Мышь",
         firstName = "Антон",
         secondName = "Степко",
-        sms = "",
-        call = "",
-        videoCall = "",
-        email = "mail@mail.ru",
         cellNumber = "8 (999) 999-42-42",
         homeNumber = "8 (999) 888-42-42",
-        faceTime = listOf(),
-        iCloud = "",
-        contacts = favoriteContact.userName
-
+        iCloud = "mail@mail.ru",
+        favoriteContacts = listOf(favoriteContact1, favoriteContact2, favoriteContact3),
     )
-
 }
