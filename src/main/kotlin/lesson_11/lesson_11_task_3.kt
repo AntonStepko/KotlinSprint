@@ -3,20 +3,22 @@ package lesson_11
 class Room(
     val cover: Int,
     val title: String,
+    val members: List<Member>,
 )
 
 class Member(
     val id: Int,
-    val avatar: List<String>,
-    val nickname: List<String>,
+    val avatar: String,
+    val nickname: String,
 ) {
 
     fun speakStatus() {
         println("разговаривает, микрофон выключен, пользователь заглушен")
     }
 
-    fun getList(): List<String> =
-        avatar.zip(nickname) { avatar, nickname -> "$avatar - $nickname" }
+    fun getNickname() {
+        println("$avatar -> $nickname")
+    }
 }
 
 fun main() {
@@ -24,25 +26,29 @@ fun main() {
     val room1 = Room(
         cover = 1,
         title = "Чтение книг",
+        members = listOf(),
     )
 
     val room2 = Room(
         cover = 2,
         title = "Ремонт авто",
+        members = listOf(),
     )
 
     val member1 = Member(
         id = 1,
-        avatar = listOf("Лев", "Тигр", "Смайл"),
-        nickname = listOf("Сергей", "Дмитрий", "Игорь"),
+        avatar = "Лев",
+        nickname = "Сергей",
     )
 
     val member2 = Member(
         id = 2,
-        avatar = listOf("Луна", "Город", "Кошка"),
-        nickname = listOf("Алексей", "Петр", "Елена"),
+        avatar = "Луна",
+        nickname = "Алексей",
     )
 
-    println(member1.getList()[2])
-    member1.speakStatus()
+    member2.getNickname()
+
+    println(member2.avatar)
+    member2.speakStatus()
 }
